@@ -31,10 +31,8 @@ public class CRUDBuilderTest {
 
 	}
 	
-	 @Test(dataProvider = "getNexSoftData", dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
-	public void cobaDulu(String param1, String param2, String param3) {
-		Reporter.log("Nama: " +param1 + " Email: "+param2+ " Alamat: "+param3);
-	}
+	
+	
 	
 	
 	@Test (priority = 0)
@@ -51,36 +49,46 @@ public class CRUDBuilderTest {
 		Assert.assertEquals(username, "Dewabrata");
 	}
 	
-	@Test (priority = 1)
-	public void createData() {
+	 @Test(priority = 1,dataProvider = "getNexSoftData", dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
+	public void createData(String param1, String param2, String param3) {
+			
 		
+		driver.get("http://localhost/cicool/administrator/absensi");
 		
+	
 		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 		System.out.println( "create data --> "+ sdf2.format(new  Date().getTime()));
-		driver.findElement(By.linkText("CRUD Builder")).click();
-	    
-	    driver.findElement(By.linkText("see")).click();
-	  
-	    driver.findElement(By.id("btn_add_new")).click();
+		
+		
+		try {
+			driver.findElement(By.id("btn_add_new")).click();
+		 }catch (org.openqa.selenium.StaleElementReferenceException ex ) {
+			 driver.findElement(By.id("btn_add_new")).click();
+		}
+			
+		
+	   
 	   
 	    driver.findElement(By.id("username")).click();
 	   
-	    driver.findElement(By.id("username")).sendKeys("Eva Adam");
+	    driver.findElement(By.id("username")).sendKeys(param1);
 	    
-	    driver.findElement(By.id("email")).sendKeys("email@ba.com");
+	    driver.findElement(By.id("email")).sendKeys(param2);
 	   
-	    driver.findElement(By.id("location")).sendKeys("1231121");
+	    driver.findElement(By.id("location")).sendKeys(param3);
 	   
 	    driver.findElement(By.linkText("Save and go to list")).click();
 	    
-	    List<WebElement> lstUsername = driver
-	    		.findElements(By.xpath("/html[1]/body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr/td/span[@class='list_group-username']"));
+//	    List<WebElement> lstUsername = driver
+//	    		.findElements(By.xpath("/html[1]/body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[2]/table[1]/tbody[1]/tr/td/span[@class='list_group-username']"));
+//	    
+//	    for (WebElement webElement : lstUsername) {
+//			System.out.println(webElement.getText());
+//		}
 	    
-	    for (WebElement webElement : lstUsername) {
-			System.out.println(webElement.getText());
-		}
 	    
-	    System.out.println("Nama terakhir" +lstUsername.get(lstUsername.size()-1).getText());
+	    
+	   
 	}
 	
 	@Test (priority = 1)

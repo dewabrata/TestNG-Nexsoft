@@ -28,7 +28,7 @@ public class FrontpageTest {
 	public String screenshoot() {
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String waktu = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		String namaFile = "E:\\TestScreenshoot\\)"+waktu+".png";
+		String namaFile = "E:\\TestScreenshoot\\"+waktu+".png";
 		File screenshoot = new File(namaFile);
 		try {
 			FileUtils.copyFile(srcFile, screenshoot);
@@ -69,7 +69,7 @@ public class FrontpageTest {
 		driver.findElement(By.cssSelector("input[placeholder='Password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 		
-		String file = "<img src='file://"+screenshoot()+"' />";
+		String file = "<img src='file://"+screenshoot()+"' width=\"250\" height=\"300\" />";
 
 		
 		Reporter.log(file);

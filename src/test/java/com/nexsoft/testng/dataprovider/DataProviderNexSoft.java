@@ -16,7 +16,7 @@ public class DataProviderNexSoft {
 		return new Object[][] {{"dewabrata"},{"nextSoft"}};
 	}
 	
-	 @DataProvider(parallel = true)
+	 @DataProvider(parallel = false)
 	    public Object[][] getNexSoftData() throws Exception {
 	        ExtUtils ext = new CSVUtils(getPathOfTheFile("nextsoft_data.csv"),true);
 	        return ext.parseData();
