@@ -60,7 +60,7 @@ public class CRUDBuilderTest {
 	    driver.findElement(By.id("username")).click();
 	   
 	    driver.findElement(By.id("username")).sendKeys("Eva Adam");
-	   
+	    
 	    driver.findElement(By.id("email")).sendKeys("email@ba.com");
 	   
 	    driver.findElement(By.id("location")).sendKeys("1231121");

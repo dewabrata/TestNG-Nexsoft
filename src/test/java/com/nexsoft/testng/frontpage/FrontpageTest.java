@@ -10,10 +10,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 
 public class FrontpageTest {
 	WebDriver driver;
 
+	
+
+	
+	
+	@Test(dataProvider = "data-provider", dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
+	public void consumeData(String data) {
+		System.out.println(data);
+	}
+	
+	
 	@BeforeClass
 	public void init() {
 		System.setProperty("url", "http://localhost/cicool/");
