@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.TestNG;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -32,7 +33,7 @@ public class CRUDBuilderTest {
 	
 	 @Test(dataProvider = "getNexSoftData", dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
 	public void cobaDulu(String param1, String param2, String param3) {
-		System.out.println(param1+param2+param3);
+		Reporter.log("Nama: " +param1 + " Email: "+param2+ " Alamat: "+param3);
 	}
 	
 	

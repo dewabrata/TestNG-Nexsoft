@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.nexsoft.testng.dashboard.CRUDBuilderTest">
+      <class name="com.nexsoft.testng.frontpage.FrontpageTest">
         <methods>
+          <include name="login"/>
           <include name="init"/>
-          <include name="cobaDulu"/>
         </methods>
-      </class> <!-- com.nexsoft.testng.dashboard.CRUDBuilderTest -->
+      </class> <!-- com.nexsoft.testng.frontpage.FrontpageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
