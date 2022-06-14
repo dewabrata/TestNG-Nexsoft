@@ -6,7 +6,7 @@
       <class name="com.nexsoft.testng.dashboard.CRUDBuilderTest">
         <methods>
           <include name="init"/>
-          <include name="createData"/>
+          <include name="cobaDulu"/>
         </methods>
       </class> <!-- com.nexsoft.testng.dashboard.CRUDBuilderTest -->
     </classes>

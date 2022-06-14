@@ -19,7 +19,8 @@ public class FrontpageTest {
 
 	
 	
-	@Test(dataProvider = "data-provider", dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
+	@Test(dataProvider = "data-provider",
+    dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
 	public void consumeData(String data) {
 		System.out.println(data);
 	}

@@ -30,6 +30,11 @@ public class CRUDBuilderTest {
 
 	}
 	
+	 @Test(dataProvider = "getNexSoftData", dataProviderClass = com.nexsoft.testng.dataprovider.DataProviderNexSoft.class)
+	public void cobaDulu(String param1, String param2, String param3) {
+		System.out.println(param1+param2+param3);
+	}
+	
 	
 	@Test (priority = 0)
 	public void login() {
